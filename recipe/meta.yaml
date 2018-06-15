@@ -1,6 +1,6 @@
 {% set name = "circus" %}
-{% set version = "0.14.0" %}
-{% set sha256 = "593d26fbd43e8ec8088178101696bd776fa881d3f7d9eb5ab96cafda913c7dac" %}
+{% set version = "0.15.0" %}
+{% set sha256 = "8a97caa5e1eed4edf0e9d726f86dc8ef4774ff46c3040303bc854c8f397e3736" %}
 
 package:
   name: {{ name }}
