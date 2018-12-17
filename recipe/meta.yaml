@@ -56,7 +56,7 @@ test:
 
 about:
   home: https://github.com/circus-tent/circus
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE
   summary: Circus is a program that will let you run and watch multiple processes and sockets.
 
