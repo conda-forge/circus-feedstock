@@ -12,22 +12,21 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   entry_points:
-    - circusd=circus.circusd:main
-    - circusd-stats=circus.stats:main
-    - circusctl=circus.circusctl:main
-    - circus-top=circus.stats.client:main
-    - circus-plugin=circus.plugins:main
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+    - circusd = circus.circusd:main
+    - circusd-stats = circus.stats:main
+    - circusctl = circus.circusctl:main
+    - circus-top = circus.stats.client:main
+    - circus-plugin = circus.plugins:main
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [win]
 
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - iowait
@@ -56,7 +55,7 @@ test:
 
 about:
   home: https://github.com/circus-tent/circus
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE
   summary: Circus is a program that will let you run and watch multiple processes and sockets.
 
