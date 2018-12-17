@@ -24,10 +24,9 @@ build:
 
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - iowait
