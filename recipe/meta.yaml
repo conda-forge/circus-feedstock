@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 1000
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
