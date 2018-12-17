@@ -1,6 +1,6 @@
 {% set name = "circus" %}
-{% set version = "0.14.0" %}
-{% set sha256 = "593d26fbd43e8ec8088178101696bd776fa881d3f7d9eb5ab96cafda913c7dac" %}
+{% set version = "0.15.0" %}
+{% set sha256 = "d1603cf4c4f620ce6593d3d2a67fad25bf0242183ea24110d8bb1c8079c55d1b" %}
 
 package:
   name: {{ name }}
@@ -20,8 +20,6 @@ build:
     - circus-top = circus.stats.client:main
     - circus-plugin = circus.plugins:main
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [win]
-
 
 requirements:
   host:
@@ -29,10 +27,10 @@ requirements:
     - pip
   run:
     - python
-    - iowait
+    - six
     - psutil
-    - pyzmq >=13.1.0
-    - tornado >=3.0
+    - pyzmq >=13.1.0,<17.0
+    - tornado >=3.0,<5.0
 
 test:
   imports:
@@ -46,10 +44,7 @@ test:
   commands:
     - circusd --help
     - circusd-stats --help
-    # Seems to randomly hang, which is causing CI issues.
-    # Current version in master doesn't exhibit this problem.
-    # For now removing it from the tests.
-    # - circusctl --help
+    - circusctl --help
     - circus-top --help
     - circus-plugin --help
 
