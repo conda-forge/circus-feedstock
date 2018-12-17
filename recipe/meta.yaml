@@ -12,13 +12,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   entry_points:
-    - circusd=circus.circusd:main
-    - circusd-stats=circus.stats:main
-    - circusctl=circus.circusctl:main
-    - circus-top=circus.stats.client:main
-    - circus-plugin=circus.plugins:main
+    - circusd = circus.circusd:main
+    - circusd-stats = circus.stats:main
+    - circusctl = circus.circusctl:main
+    - circus-top = circus.stats.client:main
+    - circus-plugin = circus.plugins:main
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [win]
 
