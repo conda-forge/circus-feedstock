@@ -1,18 +1,17 @@
 {% set name = "circus" %}
 {% set version = "0.15.0" %}
-{% set sha256 = "d1603cf4c4f620ce6593d3d2a67fad25bf0242183ea24110d8bb1c8079c55d1b" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: d1603cf4c4f620ce6593d3d2a67fad25bf0242183ea24110d8bb1c8079c55d1b
+  skip: True  # [win or py>35]
 
 build:
-  number: 1000
+  number: 0
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
@@ -23,10 +22,10 @@ build:
 
 requirements:
   host:
-    - python <3.7
+    - python
     - pip
   run:
-    - python <3.7
+    - python
     - six
     - psutil
     - pyzmq >=13.1.0,<17.0
