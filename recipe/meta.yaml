@@ -18,6 +18,7 @@ build:
     - circus-top = circus.stats.client:main
     - circus-plugin = circus.plugins:main
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True  # [win]
 
 requirements:
   host:
