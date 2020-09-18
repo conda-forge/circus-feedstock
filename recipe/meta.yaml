@@ -26,10 +26,9 @@ requirements:
     - pip
   run:
     - python
-    - six
     - psutil
     - pyzmq >=17.0
-    - tornado >=3.0,<5.0
+    - tornado >=5.0.2
 
 test:
   imports:
