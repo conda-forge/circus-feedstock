@@ -10,7 +10,7 @@ source:
   sha256: 7e15dd1ef94f06e1aa00ac0dabe05b9e312633a7e58fa5e2361459e7f915f4c5
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
