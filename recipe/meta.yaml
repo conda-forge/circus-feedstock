@@ -10,7 +10,7 @@ source:
   sha256: 0d400c1041bf877a53088014d46533ae45e7c90bfcc0608ae34015f1306aad67
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
@@ -22,10 +22,10 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.7
     - pip
   run:
-    - python >=3.5
+    - python >=3.7
     - psutil
     - pyzmq >=17.0
     - tornado >=5.0.2
