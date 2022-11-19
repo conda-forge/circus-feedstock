@@ -1,5 +1,5 @@
 {% set name = "circus" %}
-{% set version = "0.17.2" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0d400c1041bf877a53088014d46533ae45e7c90bfcc0608ae34015f1306aad67
+  sha256: 193ce8224e068ced66724cf483106fb6674b51a57583ac1a0e7ed7a7ee8c71ab
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
@@ -24,6 +24,7 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - flit-core >=3.4,<4
   run:
     - python >=3.7
     - psutil
