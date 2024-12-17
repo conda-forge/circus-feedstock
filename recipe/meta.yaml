@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 193ce8224e068ced66724cf483106fb6674b51a57583ac1a0e7ed7a7ee8c71ab
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - circusd = circus.circusd:main
     - circusd-stats = circus.stats:main
@@ -22,16 +22,18 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit-core >=3.4,<4
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - psutil
     - pyzmq >=17.0
     - tornado >=5.0.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - circus
     - circus.commands
